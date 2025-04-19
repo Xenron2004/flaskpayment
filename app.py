@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify, render_template, redirect,session,url_for
+# from phonepe.sdk.pg.payments.v2.standard_checkout_client import StandardCheckoutClient
 from phonepe.sdk.pg.payments.v2.standard_checkout_client import StandardCheckoutClient
+
 from phonepe.sdk.pg.env import Env
 from phonepe.sdk.pg.payments.v2.models.request.standard_checkout_pay_request import StandardCheckoutPayRequest
 from uuid import uuid4
@@ -32,7 +34,8 @@ client = StandardCheckoutClient.get_instance(
     client_id=os.getenv("CLIENT_ID"),
     client_secret=os.getenv("CLIENT_SECRET"),
     client_version=1,
-    env=Env.PRODUCTION,
+    # env=Env.SANDBOX,
+    env=Env.PRODUCTION,  # Change to Env.PRODUCTION when live
     # env=Env.PRODUCTION  # Change to Env.PRODUCTION when live
 
 )
