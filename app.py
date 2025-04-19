@@ -32,7 +32,7 @@ client = StandardCheckoutClient.get_instance(
     client_id=os.getenv("CLIENT_ID"),
     client_secret=os.getenv("CLIENT_SECRET"),
     client_version=1,
-    env=Env.SANDBOX,
+    env=Env.PRODUCTION,
     # env=Env.PRODUCTION  # Change to Env.PRODUCTION when live
 
 )
